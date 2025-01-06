@@ -1,24 +1,14 @@
 ---
-layout: cv
-permalink: /cv/
+layout: page
 title: "My CV"
 nav: true
 nav_order: 2
-cv_pdf: AliHassan.pdf
-description:
-toc:
-  sidebar: left
+permalink: /cv/
 ---
-# Curriculum Vitae
 
-This is an example CV page. You can put your long-form CV here in Markdown.  
-Alternatively, if you want a single PDF button at the top for visitors to download, just replace `cv_pdf: example_pdf.pdf` in the front matter with your own PDF file name or link.
+Below is my official curriculum vitae. Click the link to view or download it:
 
-- **Education**  
-  B.S. in Computer Science, LUMS
+[Download CV PDF](/assets/pdf/AliHassan.pdf)
 
-- **Research Interests**  
-  Distributed Systems, Networking, LLM-based solutions for data analytics
 
-*(Continue listing your CV content...)*
 

@@ -54,13 +54,6 @@ Advisor: Dr. Murtaza Taj
 - **Optimized Pan, Tilt, and Zoom** to recursively capture overlapping images, localizing hotspots via CLIP-based LLM & YOLO.  
 - Integrated OpenCV-based GIF workflows for easier visualization and early alerts.
 
-### Cost-Effective AIoT Flood Monitoring System  
-**Research Intern — Centre for Water Informatics & Technology, LUMS** (Jun 2024 – Aug 2024)  
-Advisor: Dr. Talha Manzoor  
-- Built a low-cost **Edge AIoT system** using ESP-32 Cam to detect floods and wildlife.  
-- Integrated YOLOv5 & LLM on microcontrollers, achieving detection at **1/10 the cost** of standard systems.  
-- Employed GSM modules & sleep modes to handle limited connectivity and power constraints in remote regions.
-
 ### Identifying Bottlenecks in Deploying LLMs on Resource-Constrained Devices  
 **Researcher — Topics in Large Language Models** (Sep 2024 – Present)  
 Advisors: Dr. Ihsan Ayyub Qazi, Dr. Zafar Ayyub Qazi  
@@ -73,6 +66,23 @@ Advisors: Dr. Ihsan Ayyub Qazi, Dr. Zafar Ayyub Qazi
 Advisor: Dr. Naveed Anwar Bhatti  
 - Investigated critical security flaws in battery-less IoT setups, analyzing unique charge/discharge cycles with Mementos.  
 - Demonstrated how resource-limited IoT systems require tailored safeguards against malicious exploitation.
+
+---
+## Work Experience
+
+### Tibbling Technologies - Research Intern
+**Neuroscience-Inspired AI Systems** (Jan 2025 - Present)               	               
+Advisor: Dr. Asim Iqbal (Adjunct Assistant Professor, Weill Cornell Medicine)
+- Exploring neuroscience-inspired machine learning frameworks to enhance cognitive model efficiency, focusing on scalable distributed systems and real-time applications.
+
+### Centre for Water Informatics & Technology at LUMS - Research Intern
+**Cost-Effective AIoT Flood Monitoring System** (Jun 2024 – Aug 2024)  
+Advisor: Dr. Talha Manzoor (Assistant Professor, LUMS)
+- Developed a cost-effective Edge AIoT system using ESP-32 Cam for real-time flood and wildlife monitoring in northern Pakistan, enhancing disaster preparedness and environmental protection.
+- Built a low-cost **Edge AIoT system** using ESP-32 Cam to detect floods and wildlife.  
+- Integrated YOLOv5 & LLM on microcontrollers, achieving detection at **1/10 the cost** of standard systems.  
+- Employed GSM modules & sleep modes to handle limited connectivity and power constraints in remote regions.
+
 
 ---
 ## Teaching Experience
@@ -141,6 +151,7 @@ Advisor: Dr. Naveed Anwar Bhatti
 
 ## Misc
 
-Besides my deep interest in research and problem-solving, I absolutely love **cars and racing**. Most recently, **Returnal**—a roguelike game that thrives on iterative failure—has been a personal favorite. The research process often mirrors that cycle of repeated experimentation until a breakthrough emerges.
+Besides my deep interest in large-scale distributed solutions, I **love gaming**—with **God of War** as one of my all-time favorites—and I’m an avid traveler. I’ve journeyed to some of the most remote, hard-to-access areas in northern Pakistan, including **Chuda Valley**. A major future goal of mine is to visit the **K2 base camp** and ultimately climb **Tiger Peak** (nicknamed “mini K2”). 
+
 
 **Best way to contact me is via Email.**  
