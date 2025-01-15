@@ -70,7 +70,7 @@ Advisor: Dr. Naveed Anwar Bhatti
 ---
 ## Work Experience
 
-### Tibbling Technologies - Research Intern
+### US based Stealth Startup - Research Intern
 **Neuroscience-Inspired AI Systems** (Jan 2025 - Present)               	               
 Advisor: Dr. Asim Iqbal (Adjunct Assistant Professor, Weill Cornell Medicine)
 - Exploring neuroscience-inspired machine learning frameworks to enhance cognitive model efficiency, focusing on scalable distributed systems and real-time applications.

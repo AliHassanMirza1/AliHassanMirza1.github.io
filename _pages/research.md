@@ -8,5 +8,5 @@ permalink: /research/
 
 Below is my official research statement. Click the link to view or download it:
 
-[Download Research Statement PDF](/assets/pdf/GeneralSOP.pdf)
+[Download Research Statement PDF](/assets/pdf/GeneralSOPP.pdf)
 
