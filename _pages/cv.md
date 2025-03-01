@@ -8,7 +8,7 @@ permalink: /cv/
 
 Below is my official curriculum vitae. Click the link to view or download it:
 
-[Download CV PDF](/assets/pdf/AliHassanAcademicCV.pdf)
+[Download CV PDF](/assets/pdf/NewCV.pdf)
 
 
 
