@@ -56,7 +56,7 @@ export const stops = [
       {
         type: 'note',
         heading: 'Off the clock',
-        text: 'Gamer (God of War is an all-time favourite) and traveller to remote corners of Northern Pakistan like Chuda Valley. Next on the list: K2 base camp, then Tiger Peak.',
+        text: 'Gamer at heart (God of War is an all-time favourite) and happiest on the move: travelling, taking on tough hikes in remote corners of Northern Pakistan like Chuda Valley, playing rugby, swimming and hitting the gym. Lately I’m getting into basketball too. I’m a people person who loves going out, and I love working for social causes and helping people wherever I can. Next on the list: K2 base camp, then Tiger Peak.',
       },
       {
         type: 'cta',
