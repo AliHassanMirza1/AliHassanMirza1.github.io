@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en" data-theme="night" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Muhammad Ali Hassan | AI Engineer · Fulbright Scholar</title>
+    <meta name="description" content="Muhammad Ali Hassan is an AI engineer and Fulbright Scholar (MS CS, University of Illinois Chicago) who builds scalable, cost-efficient AI and software systems for neuroscience, healthcare and disaster response. Explore the portfolio by driving through Chicago by day and Gotham by night." />
+    <meta name="author" content="Muhammad Ali Hassan" />
+    <meta name="theme-color" content="#05070b" />
+    <link rel="canonical" href="https://alihassanmirza1.github.io/" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Muhammad Ali Hassan | AI Engineer · Fulbright Scholar" />
+    <meta property="og:description" content="Chicago by day. Gotham by night. Drive through an interactive 3D city to explore my work in scalable AI, distributed systems and cost-efficient software." />
+    <meta property="og:url" content="https://alihassanmirza1.github.io/" />
+    <meta property="og:image" content="https://alihassanmirza1.github.io/og.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <!--JSONLD-->
+    <script>
+      // Resolve the theme before first paint so neither the UI nor the classic view flashes.
+      (function () {
+        var d = document.documentElement, t = null;
+        try { t = (localStorage.getItem('theme') || '').replace(/"/g, ''); } catch (e) {}
+        // first visit follows the device: light mode → Chicago by day, dark mode → Gotham by night
+        if (t !== 'day' && t !== 'night') t = matchMedia('(prefers-color-scheme: light)').matches ? 'day' : 'night';
+        d.setAttribute('data-theme', t);
+        d.className = d.className.replace('no-js', 'js');
+        if (location.hash === '#classic' || location.hash.indexOf('#sec-') === 0) d.classList.add('classic-open');
+      })();
+    </script>
+  </head>
+  <body>
+    <a class="skip-link js-open-classic" href="#classic">Skip to the text version of this portfolio</a>
+
+    <div id="app" aria-hidden="false">
+      <div id="stage" aria-hidden="true"></div>
+      <div id="labels" aria-hidden="false"></div>
+
+      <!-- Intro -->
+      <section id="intro" class="intro" aria-labelledby="intro-title">
+        <div class="intro-card">
+          <p class="intro-badge">{{bat}}<span>Portfolio</span></p>
+          <h1 id="intro-title"><span>Muhammad Ali</span> <span>Hassan</span></h1>
+          <p class="intro-role">{{headline}}</p>
+          <p class="intro-tagline">{{tagline}}</p>
+
+          <div class="intro-prefs">
+            <div class="mode-switch" role="radiogroup" aria-label="Time of day">
+              <button type="button" role="radio" data-theme-set="day" aria-checked="false">{{icon:sun}}<span><b>Chicago</b><small>by day</small></span></button>
+              <button type="button" role="radio" data-theme-set="night" aria-checked="true">{{icon:moon}}<span><b>Gotham</b><small>by night</small></span></button>
+            </div>
+            <button type="button" class="sound-toggle js-sound" aria-pressed="false" aria-label="Sound is off. Turn sound on">{{icon:mute}}{{icon:sound}}<span><b class="js-sound-label">Sound off</b><small>engine &amp; city</small></span></button>
+          </div>
+
+          <div class="intro-actions">
+            <button type="button" class="btn btn-primary btn-lg" id="btnTour" disabled>{{icon:route}}<span>Take the guided tour</span></button>
+          </div>
+          <p class="intro-social">
+            <a class="social-link" href="{{link:linkedin}}" target="_blank" rel="noopener">{{icon:linkedin}}<span>LinkedIn</span></a>
+            <a class="social-link" href="{{link:github}}" target="_blank" rel="noopener">{{icon:github}}<span>GitHub</span></a>
+          </p>
+          <p class="intro-alt"><button type="button" class="classic-cta js-open-classic">{{icon:read}}<span><b>Prefer reading?</b> Open the classic view</span>{{icon:arrow}}</button></p>
+
+          <div class="intro-loading" role="status" aria-live="polite"><span class="bar"><i></i></span><span class="txt">Building the city…</span></div>
+        </div>
+        <p class="intro-keys" aria-hidden="true">
+          <span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> drive</span>
+          <span><kbd>Shift</kbd> boost</span>
+          <span><kbd>Space</kbd> drift</span>
+          <span><kbd>E</kbd> enter</span>
+          <span><kbd>M</kbd> map</span>
+        </p>
+      </section>
+
+      <!-- HUD -->
+      <div id="hud" class="hud" hidden>
+        <button type="button" class="hud-brand glass js-home" id="brand" aria-label="Back to home" title="Back to home (H)">
+          <span class="b-back" aria-hidden="true">{{icon:back}}</span>{{bat}}<span><b>Ali Hassan</b><small class="b-sub">AI Engineer · Fulbright Scholar</small><small class="b-home">Back to home</small></span>
+        </button>
+
+        <nav class="hud-tools glass" aria-label="Site controls">
+          <button type="button" class="tool" id="btnTourHud" title="Guided tour">{{icon:route}}<span>Tour</span></button>
+          <button type="button" class="tool" id="btnMap" title="City map (M)">{{icon:map}}<span>Map</span></button>
+          <button type="button" class="tool js-theme" id="btnTheme" title="Day / night (N)">{{icon:sun}}{{icon:moon}}<span class="js-theme-label">Night</span></button>
+          <button type="button" class="tool js-sound" id="btnSound" title="Sound" aria-pressed="false" aria-label="Sound is off. Turn sound on">{{icon:mute}}{{icon:sound}}<span>Sound</span></button>
+          <button type="button" class="tool js-open-classic" title="Read as a page">{{icon:read}}<span>Read</span></button>
+          <button type="button" class="tool" id="btnHelp" title="Controls (?)" aria-label="Controls">{{icon:help}}</button>
+        </nav>
+
+        <nav class="tourbar glass" id="tourbar" aria-label="Guided tour" hidden>
+          <span class="tb-label">Guided tour</span>
+          <button type="button" class="tb-nav tb-prev" aria-label="Previous stop">{{icon:back}}</button>
+          <ol class="tb-steps"></ol>
+          <button type="button" class="tb-nav tb-next" aria-label="Next stop">{{icon:arrow}}</button>
+          <b class="tb-count"></b>
+          <button type="button" class="tb-exit">Exit tour</button>
+        </nav>
+
+        <div class="autopilot glass" id="autopilot" hidden>
+          <span class="ap-dot" aria-hidden="true"></span>
+          <span class="ap-text" role="status"><span class="ap-prefix">Autopilot to </span><b></b> <span class="ap-dist" aria-hidden="true"></span></span>
+          <button type="button" class="ap-skip">Skip ahead</button>
+          <button type="button" class="ap-stop">Take the wheel</button>
+          <button type="button" class="ap-go">Drive me there</button>
+        </div>
+
+        <button type="button" class="minimap glass" id="minimapBtn" aria-label="Open city map">
+          <canvas id="minimap" width="176" height="176"></canvas>
+          <span class="mm-n" aria-hidden="true">N</span>
+        </button>
+
+        <div class="speedo glass" aria-hidden="true">
+          <svg viewBox="0 0 120 120" class="speedo-arc">
+            <path class="track" d="M 22 92 A 48 48 0 1 1 98 92" />
+            <path class="fill" d="M 22 92 A 48 48 0 1 1 98 92" />
+          </svg>
+          <div class="speedo-read"><span class="spd">0</span><small>km/h</small></div>
+          <div class="boost"><i></i><span>BOOST</span></div>
+        </div>
+
+        <p class="keybar glass" aria-hidden="true">
+          <span><kbd>W</kbd><kbd>A</kbd><kbd>S</kbd><kbd>D</kbd> drive</span>
+          <span><kbd>Shift</kbd> boost</span>
+          <span class="kb-opt"><kbd>Space</kbd> drift</span>
+          <span><kbd>E</kbd> enter</span>
+          <span><kbd>M</kbd> map</span>
+          <span class="kb-opt"><kbd>N</kbd> day/night</span>
+          <span><kbd>H</kbd> home</span>
+        </p>
+
+        <button type="button" class="prompt glass" id="prompt" hidden>
+          <span class="pr-key"><kbd>E</kbd></span>
+          <span class="pr-text"><small>Enter</small><b></b></span>
+        </button>
+
+        <div class="touch" id="touch" aria-hidden="true">
+          <div class="joy" id="joy"><div class="joy-base"></div><div class="joy-knob"></div></div>
+          <div class="touch-btns">
+            <button type="button" class="tbtn" data-touch="boost">BOOST</button>
+            <button type="button" class="tbtn" data-touch="drift">DRIFT</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content panel -->
+      <aside id="panel" class="panel" role="dialog" aria-modal="false" aria-labelledby="panelTitle" hidden>
+        <div class="panel-inner">
+          <div class="panel-grab" aria-hidden="true"></div>
+          <header class="panel-head">
+            <div class="panel-photo" hidden><img alt="" width="96" height="96" /></div>
+            <p class="kicker" id="panelKicker"></p>
+            <h2 id="panelTitle" tabindex="-1"></h2>
+            <p class="lede" id="panelLede"></p>
+            <button type="button" class="icon-btn panel-close" aria-label="Close panel (Esc)">{{icon:close}}</button>
+          </header>
+          <div class="panel-body" id="panelBody"></div>
+          <footer class="panel-foot">
+            <button type="button" class="btn btn-ghost panel-prev">{{icon:back}}<span></span></button>
+            <span class="panel-count"></span>
+            <button type="button" class="btn btn-primary panel-next"><span></span>{{icon:arrow}}</button>
+          </footer>
+        </div>
+      </aside>
+
+      <!-- City map / fast travel -->
+      <div id="mapov" class="overlay" role="dialog" aria-modal="true" aria-labelledby="mapTitle" hidden>
+        <div class="overlay-card map-card">
+          <header class="ov-head">
+            <div>
+              <p class="kicker">Fast travel</p>
+              <h2 id="mapTitle">City map</h2>
+              <p class="ov-sub">Pick a destination and autopilot will drive you there.</p>
+            </div>
+            <button type="button" class="icon-btn ov-close" aria-label="Close map">{{icon:close}}</button>
+          </header>
+          <div class="map-grid">
+            <canvas id="bigmap" width="560" height="560" aria-hidden="true"></canvas>
+            <ol class="stoplist" id="stoplist"></ol>
+          </div>
+        </div>
+      </div>
+
+      <!-- Help -->
+      <div id="help" class="overlay" role="dialog" aria-modal="true" aria-labelledby="helpTitle" hidden>
+        <div class="overlay-card help-card">
+          <header class="ov-head">
+            <div>
+              <p class="kicker">How to drive</p>
+              <h2 id="helpTitle">Controls</h2>
+            </div>
+            <button type="button" class="icon-btn ov-close" aria-label="Close controls">{{icon:close}}</button>
+          </header>
+          <div class="help-grid">
+            <section>
+              <h3>Keyboard</h3>
+              <dl>
+                <div><dt><kbd>W</kbd><kbd>↑</kbd></dt><dd>Accelerate</dd></div>
+                <div><dt><kbd>S</kbd><kbd>↓</kbd></dt><dd>Brake / reverse</dd></div>
+                <div><dt><kbd>A</kbd><kbd>D</kbd><kbd>←</kbd><kbd>→</kbd></dt><dd>Steer</dd></div>
+                <div><dt><kbd>Shift</kbd></dt><dd>Afterburner boost</dd></div>
+                <div><dt><kbd>Space</kbd></dt><dd>Handbrake drift</dd></div>
+                <div><dt><kbd>E</kbd><kbd>Enter</kbd></dt><dd>Open the nearby landmark</dd></div>
+                <div><dt><kbd>M</kbd></dt><dd>City map &amp; fast travel</dd></div>
+                <div><dt><kbd>N</kbd></dt><dd>Day / night</dd></div>
+                <div><dt><kbd>C</kbd></dt><dd>Change camera</dd></div>
+                <div><dt><kbd>R</kbd></dt><dd>Reset car to the road</dd></div>
+                <div><dt><kbd>Esc</kbd></dt><dd>Close panels</dd></div>
+                <div><dt><kbd>H</kbd></dt><dd>Back to the home screen</dd></div>
+              </dl>
+            </section>
+            <section>
+              <h3>Touch</h3>
+              <p>Drag anywhere on the left half of the screen to steer and accelerate. Hold <b>BOOST</b> or <b>DRIFT</b> on the right. Tap a floating label to drive there automatically.</p>
+              <h3>Gamepad</h3>
+              <p>Left stick steers, <b>RT</b> accelerates, <b>LT</b> brakes, <b>A</b> enters, <b>X</b> boosts, <b>B</b> drifts.</p>
+              <h3>Tip</h3>
+              <p>Each light beam marks a stop. Park inside the glowing ring on the road and it opens on its own. You can also drag the view to look around.</p>
+            </section>
+          </div>
+        </div>
+      </div>
+
+      <div id="toast" class="toast" role="status" aria-live="polite"></div>
+      <div id="fade" class="fade" aria-hidden="true"></div>
+    </div>
+
+    <!-- Classic / accessible / SEO view (pre-rendered at build time) -->
+    <div id="classic" class="classic" tabindex="-1" aria-label="Portfolio, text version"><!--CLASSIC--></div>
+
+    <noscript><style>#app{display:none!important}.classic{display:block!important;position:static!important}</style></noscript>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
