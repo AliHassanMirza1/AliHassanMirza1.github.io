@@ -497,11 +497,14 @@ kbd {
 .sound-toggle[aria-pressed='true'] .i {
   color: var(--accent);
 }
+/* profile links in the top-right corner of the home screen */
 .intro-social {
+  position: absolute;
+  top: max(16px, var(--safe-t));
+  right: 16px;
   display: flex;
-  flex-wrap: wrap;
   gap: 8px;
-  margin: 0 0 12px;
+  animation: rise 1s var(--ease) both;
 }
 .social-link {
   display: inline-flex;
